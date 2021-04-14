@@ -12,11 +12,18 @@
     socks: 6,
     shirts: 10,
     pants: 5,
-  }
-
-const sale = function (article, cant){
-  
 }
+
+const sale = function (article, cant) {
+    if (cant <= inventory.article) {
+        invetory.article = inventory.article - cant
+        return 200;
+    }
+    if (cant > inventory.article) {
+        return 500;
+    }
+}
+
 
 // TESTS (no modificar)
 console.log(sale('shoes',8) === 200 && inventory.shoes === 2);

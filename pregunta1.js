@@ -3,12 +3,12 @@
  * solo los numeros pares y solo numeros impares respectivamente
  */
 
-const even = function(numbers){
-  
+const soloPares = function(numero){
+    return numero.filter(num => num % 2 === 0);
 }
 
-const odd = function(numbers){
- 
+const SoloImpares = function(numero){
+    return numero.filter(num => Math.abs(num % 2) == 1);
 }
 
 // TESTS (no modificar)

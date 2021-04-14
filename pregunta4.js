@@ -21,11 +21,17 @@
    * @param {*} discoveries 
    * @param {*} inventors 
    */
-  function addDiscoveries(inventor, discoveries, inventors){
-      
+function addDescubrimientos(inventor, discoveries, inventors) {
+    for (let i = 0; i < inventors.length; i++) {
+        if (inventors[i].first == inventor || inventors[i].last == inventor) {
+            inventors[i].descubrimientos = discoveries;
+        }
+    }
+
+    return inventors;
   }
 
-  console.log(addDescubrimientos('Einstein', 
+console.log(addDescubrimientos('Einstein', 
   ['Teoría de la relatividad especial','Equivalencia entre masa y energía','Teoría de la relatividad general'], inventors
   ));
 

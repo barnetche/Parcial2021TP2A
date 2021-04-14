@@ -20,3 +20,26 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
 
+function cambioDeRepo() {
+    for (let i = 0; i < beers.length; i++) {
+        beers[i].label.replace('ttps://s3.amazonaws.com/brewerydbapi', 'https://tecnoshare.sharepoint.com/sites');
+        let nombre = cambioNombre(beers[i].label);
+        let nombre_acoplar = acoplar(beers[i].name)
+        beers[i].label = beers[i].label.replace(nombre, nombre_acoplar);
+    }
+}
+
+function acoplar(nombre) {
+    let n = nombre.replace(/ /g, '-')
+    return `${n}.png`
+}
+
+function cambioNombre(url) {
+    let nameLabel = url.split('/');
+    return nameLabel[nameLabel.length - 1];
+}
+
+
+cambioDeRepo();
+
+console.log(beers)
